@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Furasho Digital - Shop</title>
+<style>
+body{font-family:Arial;background:#f0f4f8;margin:0;}
+.container{max-width:1200px;margin:20px auto;padding:0 20px;}
+.products{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px;}
+.product-card{background:#fff;padding:15px;border-radius:10px;text-align:center;box-shadow:0 5px 15px rgba(0,0,0,0.1);}
+.product-card img{max-width:100%;height:150px;object-fit:cover;border-radius:8px;}
+.product-card button{padding:10px 15px;margin-top:10px;border:none;background:#007BFF;color:white;border-radius:5px;cursor:pointer;}
+.product-card button:hover{background:#0056b3;}
+</style>
+</head>
+<body>
+
+<!-- Universal Header -->
+<header style="background:#007BFF;color:#fff;padding:15px 30px;text-align:center;position:relative;">
+<h1>Furasho Digital Market</h1>
+<button onclick="goToProfile()" style="position:absolute; top:15px; right:230px; padding:10px 15px; background:#FFC107; border:none; border-radius:5px; color:white; cursor:pointer;">Profile</button>
+<button onclick="goToCart()" style="position:absolute; top:15px; right:120px; padding:10px 15px; background:#28a745; border:none; border-radius:5px; color:white; cursor:pointer;">Cart</button>
+<button onclick="logout()" style="position:absolute; top:15px; right:15px; padding:10px 15px; background:#ff4d4d; border:none; border-radius:5px; color:white; cursor:pointer;">Logout</button>
+</header>
+
+<div class="container">
+<div class="products" id="productList"></div>
+</div>
+
+<script>
+// Product List
+const products=[
+{name:"T-shirt",price:15,img:"https://via.placeholder.com/150"},
+{name:"Saacad",price:50,img:"https://via.placeholder.com/150"},
+{name:"Kawo",price:25,img:"https://via.placeholder.com/150"},
+{name:"Headphone",price:80,img:"https://via.placeholder.com/150"},
+{name:"Laptop",price:500,img:"https://via.placeholder.com/150"},
+{name:"Shoes",price:60,img:"https://via.placeholder.com/150"}];
+
+function loadProducts(){
+let productList=document.getElementById("productList");
+productList.innerHTML="";
+products.forEach((p,index)=>{
+productList.innerHTML+=`
+<div class="product-card">
+<img src="${p.img}" alt="${p.name}">
+<h3>${p.name}</h3>
+<p>$${p.price}</p>
+<button onclick="addToCart(${index})">Add to Cart</button>
+</div>`;
+});
+}
+
+function addToCart(index){
+let cart=JSON.parse(localStorage.getItem("cart"))||[];
+cart.push(products[index]);
+localStorage.setItem("cart",JSON.stringify(cart));
+alert(products[index].name+" added to cart!");
+}
+
+// Navigation Functions
+function goToProfile(){ window.location.href="profile.html"; }
+function goToCart(){ window.location.href="cart.html"; }
+function logout(){ window.location.href="index.html"; }
+
+// Login check
+let user=JSON.parse(localStorage.getItem("userProfile"));
+if(!user){window.location.href="index.html";}
+
+loadProducts();
+</script>
+
+</body>
+</html>
