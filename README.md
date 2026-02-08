@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        /* qeybta kowaad header ka iyo nav ka */
+
+        header{
+            background-color: bisque;
+            padding: 20px;
+
+        }
+        header h1{
+            text-align: center;
+            font-weight: bold;
+        }
+        .menu{
+            list-style: none;
+            display: flex;
+            justify-content: center;
+             
+            gap: 50px
+         
+        }
+        .menu{
+            font-weight: bold;
+            color: aliceblue;
+            font-size: 1.8rem;
+        }
+
+        /* qeybta dhaxe ee main ka guud ahaan waa jiifiye*/
+
+        main{
+           display: flex;
+           margin: 20px;
+           gap: 15px
+           
+        }
+
+        .team{
+            background-color: azure;
+            width: 500px;
+            border-radius: 20px;
+            padding: 10px;
+        }
+
+        /* qeybtaan article farta qurxinooya*/
+.team h3 { font-weight: bold;
+    font-size: 1.3rem;
+}
+
+/* main ka lawaad bilaawe waa soo lawo celiye*/
+        main{
+           display: flex;
+           margin: 20px;
+           gap: 15px;
+           
+        }
+
+        .all{
+            background-color: azure;
+            width: 500px;
+            border-radius: 20px;
+            padding: 10px;
+        }
+.all h3 { font-weight: bold;
+    font-size: 1.3rem;
+
+
+}
+
+
+
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Furasho Digital</h1>
+        <nav>
+            <ul class="menu">
+                <li> <a href="#home"> home</a></li>
+                <li> <a href="#servece">seves</a></li>
+                <li> <a href="#provile">profile</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+
+<article class="team">
+    <h3>physics</h3>
+    <p>waa waa 15 chapter <span style="color: brown;"> $30dollar</span></p>
+</article>
+
+<article class="team">
+    <h3>somalia</h3>
+    <p>waa 9 chapter <span style="color: brown;"> $30dollar</span></p>
+</article>
+<article class="team"> <br>
+    <h3>tarbiyo </h3>
+    <p>waa 17chapter <span style="color: brown;"> $30dollar</span></p>
+</article>
+
+    </main>
+    <main>
+
+<article class="all">
+    <h3>chemistry</h3>
+    <p>waa 15 chapter  <span style="color: brown;"> $30dollar</span>    </p>
+</article>
+
+<article class="all">
+    <h3>carabi</h3>
+    <p>waa 29 chapter  <span style="color: brown;"> $30dollar</span> </p>
+</article>
+<article class="all"> <br>
+    <h3>tariiq</h3>
+    <p>waa 13 chapter <span style="color: brown;"> $30dollar</span></p>
+</article>
+
+    </main>
+
+</body>
+</html>
